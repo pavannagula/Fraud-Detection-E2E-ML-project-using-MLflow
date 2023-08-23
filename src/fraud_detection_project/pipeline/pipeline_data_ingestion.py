@@ -3,7 +3,6 @@ from fraud_detection_project.components.Data_Ingestion import DataIngestion
 from fraud_detection_project import logger
 
 
-
 STAGE_01 = "Data Ingestion"
 
 class DataIngestionTrainingPipeline:
