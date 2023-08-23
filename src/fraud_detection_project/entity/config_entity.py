@@ -5,5 +5,6 @@ from pathlib import Path
 @dataclass(frozen=True)
 class DataIngestionConfig:
     root_dir: Path
-    source_URL: str
+    s3_bucket: str
+    s3_object_key: Path
     local_data_file: Path

@@ -26,7 +26,8 @@ class ConfigurationManager:
         data_ingestion_config = DataIngestionConfig(
             # We are accessing the file paths that are defined in the configuration yaml file
             root_dir=config.root_dir,
-            source_URL=config.source_URL,
+            s3_bucket=config.s3_bucket,
+            s3_object_key=config.s3_object_key,
             local_data_file=config.local_data_file,
         )
 
