@@ -1,0 +1,7 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://www.kaggle.com/datasets/kartik2112/fraud-detection?select=fraudTrain.csv
+  local_data_file: artifacts/data_ingestion/fraud_data.csv
+  

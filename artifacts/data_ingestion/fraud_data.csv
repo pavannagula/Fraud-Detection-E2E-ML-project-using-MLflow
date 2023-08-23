@@ -1,0 +1,186 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Credit Card Transactions Fraud Detection Dataset | Kaggle</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="Simulated Credit Card Transactions generated using Sparkov" />
+  <meta name="turbolinks-cache-control" content="no-cache" />
+    <meta name="keywords" content="finance,video games,e-commerce services" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="XBQ1iTC/E4nkJFIdyt9tGA==" type="text/javascript">
+    window["pageRequestStartTime"] = 1692747121066;
+    window["pageRequestEndTime"] = 1692747121234;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+  <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons&display=block"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons&display=block"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="XBQ1iTC/E4nkJFIdyt9tGA==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+    <link rel="canonical" href="/datasets/kartik2112/fraud-detection" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=dd064d680b3ca5c8a76b" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=c5ea368bfe8bd6c8f533" />
+  
+    
+ 
+      <script nonce="XBQ1iTC/E4nkJFIdyt9tGA==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="XBQ1iTC/E4nkJFIdyt9tGA==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-T7QHS60L4Q', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Datasets'
+        });
+    </script>
+    <script nonce="XBQ1iTC/E4nkJFIdyt9tGA==" async src="https://www.googletagmanager.com/gtag/js?id=G-T7QHS60L4Q"></script>
+
+  
+    
+    <meta property="og:url" content="/datasets/kartik2112/fraud-detection" />
+    <meta property="og:title" content="Credit Card Transactions Fraud Detection Dataset" />
+    <meta property="og:description" content="Simulated Credit Card Transactions generated using Sparkov" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/kaggle-datasets-images/817870/1399887/26b35643714abef2901eed60f73f6cb7/dataset-card.jpg?t=2020-08-05-15-23-22" />
+    <meta property="fb:app_id" content="2665027677054710" />
+
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+    <script nonce="XBQ1iTC/E4nkJFIdyt9tGA==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"Credit Card Transactions Fraud Detection Dataset","description":"# About the Dataset\n\nThis is a simulated credit card transaction dataset containing legitimate and fraud transactions from the duration 1st Jan 2019 - 31st Dec 2020. It covers credit cards of 1000 customers doing transactions with a pool of 800 merchants.\n\n# Source of Simulation\n\nThis was generated using [Sparkov Data Generation | Github](https://github.com/namebrandon/Sparkov_Data_Generation) tool created by Brandon Harris. This simulation was run for the duration - 1 Jan 2019 to 31 Dec 2020. The files were combined and converted into a standard format.\n\n\n# Information about the Simulator\n\nI do not own the simulator. I used the one used by Brandon Harris and just to understand how it works, I went through few portions of the code. This is what I understood from what I read:\n\nThe simulator has certain pre-defined list of merchants, customers and transaction categories. And then using a python library called \"faker\", and with the number of customers, merchants that you mention during simulation, an intermediate list is created.\n\nAfter this, depending on the profile you choose for e.g. \"adults 2550 female rural.json\" (which means simulation properties of adult females in the age range of 25-50 who are from rural areas), the transactions are created. Say, for this profile, you could check [\"Sparkov | Github | adults_2550_female_rural.json\"](https://github.com/namebrandon/Sparkov_Data_Generation/blob/master/profiles/adults_2550_female_rural.json), there are parameter value ranges defined in terms of min, max transactions per day, distribution of transactions across days of the week and normal distribution properties (mean, standard deviation) for amounts in various categories. Using these measures of distributions, the transactions are generated using faker.\n\nWhat I did was generate transactions across all profiles and then merged them together to create a more realistic representation of simulated transactions.\n\n# Acknowledgements\n\n* Brandon Harris for his amazing work in creating this easy-to-use simulation tool for creating fraud transaction datasets.","url":"https://www.kaggle.com/kartik2112/fraud-detection","version":1,"keywords":["subject, people and society, business, finance","subject, culture and humanities, games, video games","subject, people and society, business, e-commerce services"],"license":{"@type":"CreativeWork","name":"CC0: Public Domain","url":"https://creativecommons.org/publicdomain/zero/1.0/"},"identifier":["817870"],"includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"Kartik Shenoy","url":"https://www.kaggle.com/kartik2112","image":"https://storage.googleapis.com/kaggle-avatars/thumbnails/966605-gp.jpg"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com/datasets/kartik2112/fraud-detection/download?datasetVersionNumber=1","contentSize":"211766662 bytes"}],"commentCount":7,"dateModified":"2020-08-05T15:20:55.217Z","discussionUrl":"https://www.kaggle.com/kartik2112/fraud-detection/discussion","alternateName":"Simulated Credit Card Transactions generated using Sparkov","isAccessibleForFree":true,"thumbnailUrl":"https://storage.googleapis.com/kaggle-datasets-images/817870/1399887/26b35643714abef2901eed60f73f6cb7/dataset-card.jpg?t=2020-08-05-15-23-22","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":7},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":29124},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":266562},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":288}]}</script>
+
+
+  
+    
+
+  
+    
+
+
+    <script nonce="XBQ1iTC/E4nkJFIdyt9tGA==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="XBQ1iTC/E4nkJFIdyt9tGA==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="XBQ1iTC/E4nkJFIdyt9tGA==" src="/static/assets/runtime.js?v=33aca85e5b428cf3d3e3" data-turbolinks-track="reload"></script>
+  <script nonce="XBQ1iTC/E4nkJFIdyt9tGA==" src="/static/assets/vendor.js?v=36acfcc16f5023be3290" data-turbolinks-track="reload"></script>
+  <script nonce="XBQ1iTC/E4nkJFIdyt9tGA==" src="/static/assets/app.js?v=2d3f464923167511b804" data-turbolinks-track="reload"></script>
+    <script nonce="XBQ1iTC/E4nkJFIdyt9tGA==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '0'
+      }
+    </script>
+</head>
+
+<body data-turbolinks="false">
+  <main>
+    
+
+
+
+
+
+<div id="site-container"></div>
+
+<div id="site-body" class="hide">
+    
+
+<div data-component-name="DatasetMaterialContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="XBQ1iTC/E4nkJFIdyt9tGA==">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"basics":{"datasetId":817870,"slug":"fraud-detection","title":"Credit Card Transactions Fraud Detection Dataset","description":"# About the Dataset\n\nThis is a simulated credit card transaction dataset containing legitimate and fraud transactions from the duration 1st Jan 2019 - 31st Dec 2020. It covers credit cards of 1000 customers doing transactions with a pool of 800 merchants.\n\n# Source of Simulation\n\nThis was generated using [Sparkov Data Generation | Github](https://github.com/namebrandon/Sparkov_Data_Generation) tool created by Brandon Harris. This simulation was run for the duration - 1 Jan 2019 to 31 Dec 2020. The files were combined and converted into a standard format.\n\n\n# Information about the Simulator\n\nI do not own the simulator. I used the one used by Brandon Harris and just to understand how it works, I went through few portions of the code. This is what I understood from what I read:\n\nThe simulator has certain pre-defined list of merchants, customers and transaction categories. And then using a python library called \u0022faker\u0022, and with the number of customers, merchants that you mention during simulation, an intermediate list is created.\n\nAfter this, depending on the profile you choose for e.g. \u0022adults 2550 female rural.json\u0022 (which means simulation properties of adult females in the age range of 25-50 who are from rural areas), the transactions are created. Say, for this profile, you could check [\u0022Sparkov | Github | adults_2550_female_rural.json\u0022](https://github.com/namebrandon/Sparkov_Data_Generation/blob/master/profiles/adults_2550_female_rural.json), there are parameter value ranges defined in terms of min, max transactions per day, distribution of transactions across days of the week and normal distribution properties (mean, standard deviation) for amounts in various categories. Using these measures of distributions, the transactions are generated using faker.\n\nWhat I did was generate transactions across all profiles and then merged them together to create a more realistic representation of simulated transactions.\n\n# Acknowledgements\n\n* Brandon Harris for his amazing work in creating this easy-to-use simulation tool for creating fraud transaction datasets.","viewCount":266562,"downloadCount":29124,"scriptCount":47,"topicCount":7,"owner":{"id":966605,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/966605-gp.jpg","name":"Kartik Shenoy","profileUrl":"/kartik2112","slug":"kartik2112","userTier":"CONTRIBUTOR"},"license":{"id":1,"name":"CC0: Public Domain","url":"https://creativecommons.org/publicdomain/zero/1.0/"},"overview":"Simulated Credit Card Transactions generated using Sparkov","collaboratorList":{"owner":{"userId":966605,"profileUrl":"/kartik2112","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/966605-gp.jpg","name":"Kartik Shenoy","slug":"kartik2112","userTier":"CONTRIBUTOR","type":"OWNER"}},"coverImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/817870/1399887/26b35643714abef2901eed60f73f6cb7/dataset-cover.jpg?t=2020-08-05-15-23-22","data":{"totalSize":211766662,"isFileset":true,"canDownload":true,"firestorePath":"v8rcyn7QqDv7GT6IIBqE/versions/Eu2B9HlBmoFhrodbeMWm","downloadUrl":"/datasets/kartik2112/kartik2112/download?datasetVersionNumber=1","versionId":1432597,"id":838416},"voteCount":288,"medalUrl":"/static/images/medals/datasets/goldl@2x.png","downloadUrl":"/datasets/kartik2112/fraud-detection/download?datasetVersionNumber=1","lastUpdateTime":"2020-08-05T15:20:55.217Z","datasetVersionNumber":1,"creatorDisplayName":"Kartik Shenoy","cardImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/817870/1399887/26b35643714abef2901eed60f73f6cb7/dataset-card.jpg?t=2020-08-05-15-23-22","categories":{"tags":[{"id":11108,"name":"finance","fullPath":"subject \u003E people and society \u003E business \u003E finance","listingUrl":"/datasets?group=public\u0026tagids=11108","description":"The finance tag covers datasets and kernels about money and investing. If you need to test some new cryptocurrency investment strategies or ward off those pesky credit card fraud enthusiasts, then you\u0027ve come to the right place.","datasetCount":6331,"competitionCount":10,"notebookCount":3890,"tagUrl":"/tags/finance","displayName":"Finance"},{"id":2507,"name":"video games","fullPath":"subject \u003E culture and humanities \u003E games \u003E video games","listingUrl":"/datasets?group=public\u0026tagids=2507","description":"Video games were originally created to prevent people from going to college and getting good jobs. That back-fired and now we have data centers full of GPUs training models to tell the difference between cats and dogs. All thanks to gamers.","datasetCount":4982,"competitionCount":14,"notebookCount":3908,"tagUrl":"/tags/video-games","displayName":"Video Games"},{"id":16340,"name":"e-commerce services","fullPath":"subject \u003E people and society \u003E business \u003E e-commerce services","listingUrl":"/datasets?group=public\u0026tagids=16340","description":"","datasetCount":1434,"notebookCount":392,"tagUrl":"/tags/e-commerce-services","displayName":"E-Commerce Services"}]},"datasetExternalUrl":"https://www.kaggle.com/datasets/kartik2112/fraud-detection","forumId":832974,"datasetVersionId":1399887,"canCreateTasks":true,"moderationStatus":"PRIVATED_MODERATION_STATUS_NO_ABUSE","lastVersionNumber":1,"diffType":"VERSIONED","contentState":"PUBLISHED"},"accessedViaHashLink":false});performance && performance.mark && performance.mark("DatasetMaterialContainer.componentCouldBootstrap");</script><script nonce="XBQ1iTC/E4nkJFIdyt9tGA==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: ["Safe.js"],
+    });
+</script>
+<script type="text/javascript" nonce="XBQ1iTC/E4nkJFIdyt9tGA==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const useProdHosts = ["www.kaggle.com", "admin.kaggle.com"];
+    const subdomain = useProdHosts.includes(window.location.hostname) ? "www" : "staging";
+
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    lib.src = `https://${subdomain}.kaggleusercontent.com/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+
+
+
+</div>
+
+
+
+
+  </main>
+</body>
+
+</html>
