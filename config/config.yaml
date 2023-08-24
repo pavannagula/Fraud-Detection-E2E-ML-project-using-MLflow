@@ -5,3 +5,8 @@ data_ingestion:
   s3_bucket: s3bucketfrauddata
   s3_object_key: data/fraud_data.csv
   local_data_file: data_ingestion/fraud_data.csv
+
+data_validation:
+  root_dir: artifacts/data_validation
+  data_dir: artifacts/data_ingestion/fraud_data.csv
+  STATUS_FILE: artifacts/data_validation/status.txt
