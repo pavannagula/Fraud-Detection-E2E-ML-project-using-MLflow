@@ -2,7 +2,8 @@ from fraud_detection_project.constants import *
 from fraud_detection_project.utils.common import read_yaml, create_directories
 from fraud_detection_project.entity.config_entity import (DataIngestionConfig, 
                                                          DataValidationConfig,
-                                                         DataTransformationConfig)
+                                                         DataTransformationConfig,
+                                                         ModelTrainerConfig)
 
 class ConfigurationManager:
     # First setting up the environment by defining the file paths of configuration file, params file and schema file.  
@@ -63,3 +64,28 @@ class ConfigurationManager:
         )
 
         return data_transformation_config
+    
+    # Model Training Stage
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.XGBClassifier
+        schema =  self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            train_data_path = config.train_data_path,
+            test_data_path = config.test_data_path,
+            model_name = config.model_name,
+            n_estimators = params.n_estimators,
+            max_depth = params.max_depth,
+            learning_rate = params.learning_rate,
+            subsample = params.subsample,
+            colsample_bytree = params.colsample_bytree,
+            random_state = params.random_state,
+            target_column = schema.name
+            
+        )
+
+        return model_trainer_config
