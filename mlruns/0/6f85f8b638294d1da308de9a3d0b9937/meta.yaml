@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/pavan/Desktop/Fraud-Detection-E2E-ML-project-using-MLflow/mlruns/0/6f85f8b638294d1da308de9a3d0b9937/artifacts
+end_time: 1693255082128
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6f85f8b638294d1da308de9a3d0b9937
+run_name: awesome-shrew-847
+run_uuid: 6f85f8b638294d1da308de9a3d0b9937
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1693255067228
+status: 3
+tags: []
+user_id: pavan

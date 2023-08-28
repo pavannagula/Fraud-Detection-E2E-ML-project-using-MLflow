@@ -3,6 +3,7 @@ from fraud_detection_project.pipeline.pipeline_data_ingestion import DataIngesti
 from fraud_detection_project.pipeline.pipeline_data_validation import DataValidationTrainingPipeline
 from fraud_detection_project.pipeline.pipeline_data_transformation import DataTransformationTrainingPipeline
 from fraud_detection_project.pipeline.pipeline_model_trainer import ModelTrainerTrainingPipeline
+from fraud_detection_project.pipeline.pipeline_model_evaluation import ModelEvaluationTrainingPipeline
 
 STAGE_01 = "Data Ingestion stage"
 try:
@@ -39,6 +40,16 @@ STAGE_NAME = "Model Trainer stage"
 try:
    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
    data_ingestion = ModelTrainerTrainingPipeline()
+   data_ingestion.main()
+   logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+        logger.exception(e)
+        raise e
+
+STAGE_NAME = "Model Evaluation stage"
+try:
+   logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
+   data_ingestion = ModelEvaluationTrainingPipeline()
    data_ingestion.main()
    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
 except Exception as e:
