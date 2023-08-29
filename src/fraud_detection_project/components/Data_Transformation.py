@@ -143,7 +143,7 @@ class DataTransformation:
         except Exception as e:
             raise Exception("Error", e)
 
-
+        
     def fit_transform(self, data_path):
         try:
             
@@ -162,11 +162,12 @@ class DataTransformation:
         
         except Exception as e:
             raise Exception("Error", e)
+            
 
     def final_data(self, data_path):
         try:
             
-            self.data = self.fit_transform(data_path)
+            self.data = self.one_hot_encode_columns(data_path)
 
             logger.info("Splitting Dataset into training and test sets Started")
             
