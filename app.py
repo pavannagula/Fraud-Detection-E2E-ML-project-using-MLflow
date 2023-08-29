@@ -3,22 +3,25 @@ import os
 import numpy as np
 from fraud_detection_project.pipeline.pipeline_prediction import PredictionPipeline
 
-app = Flask(__name__) # initializing a flask app
+app = Flask(__name__) 
 
-@app.route('/',methods=['GET'])  # route to display the home page
+# To display home page
+@app.route('/',methods=['GET'])  
 def homePage():
     return render_template("index.html")
 
-@app.route('/train',methods=['GET'])  # route to train the pipeline
+# To train the model pipeline
+@app.route('/train',methods=['GET'])  
 def training():
     os.system("python main.py")
     return "Done with Training" 
 
-@app.route('/predict',methods=['POST','GET']) # route to show the predictions in a web UI
+# To get the data from front end and pass it to pipeline for prediction
+@app.route('/predict',methods=['POST','GET']) 
 def index():
     if request.method == 'POST':
         try:
-            #  reading the inputs given by the user
+            #  Getting data front end home page from users
             category =float(request.form['category'])
             amt =float(request.form['amt'])
             city_pop =float(request.form['city_pop'])
@@ -32,7 +35,7 @@ def index():
             trans_year_2019 =float(request.form['trans_year_2019'])
             trans_year_2020 =float(request.form['trans_year_2020'])
        
-         
+            # storing the user response in a numpy array format to pass it to the prediction pipeline
             data = [category,amt,city_pop,trans_month,trans_quarter,Cust_age,city_pop_category,avg_amount_by_category,
                     gender_F,gender_M,trans_year_2019,trans_year_2020]
             data = np.array(data).reshape(1, 12)
@@ -40,6 +43,7 @@ def index():
             obj = PredictionPipeline()
             predict = obj.predict(data)
 
+            # Returning the predicted value to the results page
             return render_template('results.html', prediction = int(predict))
 
         except Exception as e:

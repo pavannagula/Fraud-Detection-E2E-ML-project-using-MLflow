@@ -13,6 +13,8 @@ develop-eggs/
 dist/
 downloads/
 eggs/
+mlruns
+artifacts
 .eggs/
 lib/
 lib64/
@@ -25,6 +27,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.github
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
