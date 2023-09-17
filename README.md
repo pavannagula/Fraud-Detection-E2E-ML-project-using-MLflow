@@ -47,28 +47,53 @@ Photo by [iStock](https://www.istockphoto.com/photo/technology-photos-gm91580641
 **Dataset link:** [Kaggle - Fraud Detection Dataset](https://www.kaggle.com/datasets/kartik2112/fraud-detection)
 
 
+
 ## Project Workflow
 
 ### Data Ingestion
 > In the data ingestion stage, I seamlessly integrated AWS services into my workflow. The data was uploaded to an S3 bucket, and by leveraging the AWS CLI, I efficiently extracted the data from the S3 bucket. This data was then stored in the designated data ingestion artifacts directory. This strategic approach ensures my project's data remains organized and readily accessible for subsequent stages of the project.
 
+Data Ingestion Pipeline - `Data_Ingestion.py` -> Connected to AWS S3 bucket and retrived the dataset
+
 ### Data Validation
 > In the Data Validation stage, I initiated by reading the data from the data ingestion artifacts folder. To ensure data integrity and adherence to the project's requirements, I subjected the data to rigorous validation against a predefined schema of column names. Furthermore, as part of this validation process, I incorporated a status file creation mechanism. This status file serves as a definitive record, indicating whether the validation was successful or encountered issues.
+
+Data Validation Pipeline - `Data_Validation.py` -> Data Validation steps which involves validation of Pre-defined schema and returns validation status.
 
 ### Data Transformation
 > During the transformation stage, I have used "chain of reaction" method to build the whole data transformation pipeline which included feature engineering, data transformation and feature scaling. By interlinking these components in a sequential manner, I ensured that the data flowed seamlessly from one step to the next, resulting in a streamlined and automated transformation process
 
+Data Transformation Pipeline - `Data_Transformation.py` -> which involved Chaining Method to build the whole transformation pipeline.
+
 ### Model Building
 > In the model building stage, I split the dataset into training and testing subsets and trained an XGBoost classifier using the defined parameters from the params.yaml file. The trained model was then stored as "model.joblib" in the model training artifacts folder, ready for deployment. This approach ensures an efficient and reproducible process for creating and archiving the model for future use
+
+Model Building Pipeline - `Model_Trainer.py` -> Involved train test split and XGBoost Model training
 
 ### Model Evaluation
 > Moving on to the model evaluation phase, I rigorously assessed the model's performance using the test dataset. Employing diverse hyperparameters, I fine-tuned the model to achieve optimal results. MLflow played a pivotal role in this process by enabling experiment tracking, allowing me to efficiently compare various model iterations. The best-performing model was then stored in the model evaluation artifacts folder for future reference. Additionally, I utilized Dagshub as a remote server to facilitate version control, ensuring the seamless management of model versions and improvements throughout this phase.
 
+Model Evaluation Pipeline - `Model_Trainer.py` -> Connected to MLflow to track the Model performance by hosting the app in Dagshub remote server. 
+
+### Mlflow
+[Mlflow](https://mlflow.org/docs/latest/index.html)
+
+### Dagshub
+[Dagshub](https://dagshub.com/)
+
 ### Model Deployment
 > Transitioning to the model deployment stage, I used Flask to construct a web application that interacted with users on the front end. This application incorporated the prediction pipeline which takes users input information and returns real-time predictions. The resulting predictions were then presented on the results homepage. Upon successful validation and functionality, I compiled a Docker image encapsulating the entire application. Subsequently, I established an Amazon EC2 instance and installed Docker within it. Employing GitHub Actions, I streamlined the integration of the repository with the EC2 instance, ensuring a continuous and automated deployment process. This comprehensive approach facilitated the successful deployment and accessibility of the predictive model.
 
+    # Steps for AWS CI/CD deployment in EC2 using Github Actions
+        1. Created IAM  User with full Access to ECR & EC2 policies
+        2. Built Docker Image of Source Code and Pushed it into ECR
+        3. Pulled Docker Image in EC2 from ECR and launched it. 
+        4. Setting EC2 instance as Self hosted Runner to connect it with Github by using Github Actions
+        5. Created Action variables to make a connection with EC2 instance
+        6. Post commit the CI & CD Deployment starts and once its done, Added the port to EC2 instance.
+
 ## References
-- https://github.com/entbappy?tab=repositories
+- https://github.com/entbappy
 - https://www.youtube.com/@krishnaik06
 
 ## License
