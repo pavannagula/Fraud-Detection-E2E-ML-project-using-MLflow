@@ -61,12 +61,12 @@ Data Ingestion Pipeline - `Data_Ingestion.py` -> Connected to AWS S3 bucket and 
 Data Validation Pipeline - `Data_Validation.py` -> Data Validation steps which involves validation of Pre-defined schema and returns validation status.
 
 ### Data Transformation
-> During the transformation stage, I have used "chain of reaction" method to build the whole data transformation pipeline which included feature engineering, data transformation and feature scaling. By interlinking these components in a sequential manner, I ensured that the data flowed seamlessly from one step to the next, resulting in a streamlined and automated transformation process
+> During the transformation stage, I used the "chain of reaction" method to build the whole data transformation pipeline which included feature engineering, data transformation and feature scaling. By interlinking these components in a sequential manner, I ensured that the data flowed seamlessly from one step to the next, resulting in a streamlined and automated transformation process
 
 Data Transformation Pipeline - `Data_Transformation.py` -> which involved Chaining Method to build the whole transformation pipeline.
 
 ### Model Building
-> In the model building stage, I split the dataset into training and testing subsets and trained an XGBoost classifier using the defined parameters from the params.yaml file. The trained model was then stored as "model.joblib" in the model training artifacts folder, ready for deployment. This approach ensures an efficient and reproducible process for creating and archiving the model for future use
+> In the model-building stage, I split the dataset into training and testing subsets and trained an XGBoost classifier using the defined parameters from the params.yaml file. The trained model was then stored as "model.joblib" in the model training artifacts folder, ready for deployment. This approach ensures an efficient and reproducible process for creating and archiving the model for future use
 
 Model Building Pipeline - `Model_Trainer.py` -> Involved train test split and XGBoost Model training
 
@@ -74,6 +74,11 @@ Model Building Pipeline - `Model_Trainer.py` -> Involved train test split and XG
 > Moving on to the model evaluation phase, I rigorously assessed the model's performance using the test dataset. Employing diverse hyperparameters, I fine-tuned the model to achieve optimal results. MLflow played a pivotal role in this process by enabling experiment tracking, allowing me to efficiently compare various model iterations. The best-performing model was then stored in the model evaluation artifacts folder for future reference. Additionally, I utilized Dagshub as a remote server to facilitate version control, ensuring the seamless management of model versions and improvements throughout this phase.
 
 Model Evaluation Pipeline - `Model_Trainer.py` -> Connected to MLflow to track the Model performance by hosting the app in Dagshub remote server. 
+
+## Model Experiments Comparision in MLflow
+
+![image](https://github.com/pavannagula/Fraud-Detection-E2E-ML-project-using-MLflow/assets/39379433/1a77085d-29a2-46b4-8f68-1a2e46bfdde8)
+
 
 ### Mlflow
 [Mlflow](https://mlflow.org/docs/latest/index.html)
